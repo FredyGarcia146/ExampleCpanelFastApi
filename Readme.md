@@ -78,6 +78,24 @@ RewriteRule ^(.*)$ http://127.0.0.1:8000/$1 [P,L]
 
 ### Step 02
 
+Creating file main.py
+``` python
+
+from fastapi import FastAPI
+app = FastAPI()
+
+@app.get('/index')
+async def root():
+    return {'message': 'Hello World'}
+
+```
+![](img/creationApp08.jpg)
+
+
+
+### Step 03
+
+
 use your favorite ssh connection tool, in my case I use MobaXterm
 
 copy the conection app
@@ -91,14 +109,16 @@ source /home/userCpanel/virtualenv/example/3.12/bin/activate && cd /home/userCpa
 You can also use the CPanel terminal
 ![](img/creationApp05.jpg)
 ![](img/creationApp06.jpg)
-### Step 03
 
+
+### Step 04
 Install libraries
 ``` bash
 pip install fastapi uvicorn[standard]
 
 ```
-### Step 04
+
+### Step 05
 
 Activar el Dominio
 ``` bash
@@ -106,7 +126,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 
 ```
 
-### Step 05
+### Step 06
 
 Go to Domain  
 
